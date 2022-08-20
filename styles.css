@@ -1,0 +1,52 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.frame{
+    display: flex;
+    border-width: 3px;
+    background-color: aqua;
+    width: 400px;
+    height: 400px;
+    flex-wrap: wrap;
+}
+
+.topRow{
+    display: flex;
+    width: 350px;
+    margin: 5px;
+    margin-left: 25px;
+    height: 100px; 
+}
+
+.results{
+    display: flex;
+    margin-top: 20px;
+    margin-right: 100px;
+    height: 50px;
+    width: 200px;
+    background-color: white;
+}
+
+.numberPad{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5px;
+    width: 250px;
+    height: 250px;
+}
+
+.operators{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5px;
+    width: 100px;
+    height: 250px;
+    margin-left: 20px
+}

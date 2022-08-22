@@ -41,11 +41,11 @@ let displayOperations = document.querySelector('.results');
 let buttons = document.querySelectorAll('button');
 
 
-let results = buttons.forEach(obj=>{
+let numbers = buttons.forEach(obj=>{
     obj.addEventListener('click',()=>{
         if(!isNaN(obj.textContent)){
             displayOperations.textContent += obj.textContent
-            results = +displayOperations.textContent
+            numbers = +displayOperations.textContent
         }
         else if(obj.textContent === 'C' && obj.textContent != '='){
             displayOperations.textContent = ''

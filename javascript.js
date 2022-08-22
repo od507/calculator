@@ -43,8 +43,9 @@ let buttons = document.querySelectorAll('button');
 
 let results = buttons.forEach(obj=>{
     obj.addEventListener('click',()=>{
-        if(obj.textContent != 'C' && obj.textContent != '='){
+        if(!isNaN(obj.textContent)){
             displayOperations.textContent += obj.textContent
+            results = +displayOperations.textContent
         }
         else if(obj.textContent === 'C' && obj.textContent != '='){
             displayOperations.textContent = ''

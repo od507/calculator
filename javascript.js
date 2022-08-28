@@ -40,15 +40,36 @@ function operate(numberOne,operator,numberTwo){
 let displayOperations = document.querySelector('.results');
 let buttons = document.querySelectorAll('button');
 
+let operator= ''
+let firstNumber = null
+let secondNumber = null
+
 
 let numbers = buttons.forEach(obj=>{
     obj.addEventListener('click',()=>{
         if(!isNaN(obj.textContent)){
-            displayOperations.textContent += obj.textContent
-            numbers = +displayOperations.textContent
+            if(operator === '') {
+                displayOperations.textContent += obj.textContent
+                firstNumber= +displayOperations.textContent
+            }
+            else{
+                displayOperations.textContent += obj.textContent
+                secondNumber = +displayOperations.textContent
+            }
         }
         else if(obj.textContent === 'C' && obj.textContent != '='){
             displayOperations.textContent = ''
+            operator=''
+            firstNumber = null
+            secondNumber = null
+        }
+        else if(isNaN(obj.textContent) && obj.textContent!= '='){
+            operator=obj.textContent
+            displayOperations.textContent=''
+        }
+        else if(obj.textContent=== '='){
+            displayOperations.textContent=operate(firstNumber,operator,secondNumber)
+            firstNumber = +displayOperations.textContent
         }
     })
 })
